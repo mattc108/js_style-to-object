@@ -19,7 +19,7 @@ function convertToObject(sourceString) {
     prop = prop.replace('\t', '');
     prop = prop.trim();
 
-    if (prop.length === 0) {
+    if (prop.length <= 1) {
       continue;
     }
 
