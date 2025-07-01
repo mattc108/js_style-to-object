@@ -8,15 +8,14 @@
  */
 function convertToObject(sourceString) {
   // write your code here
-  const editedString = sourceString.replace('\n', '');
-  const properties = editedString.split(';');
+  // const editedString = sourceString.replace(/\n/g, '');
+  const properties = sourceString.split(';');
 
   const result = {};
 
   for (const p of properties) {
     let prop = p;
 
-    prop = prop.replace('\n', '');
     prop = prop.replace('\t', '');
     prop = prop.trim();
 
@@ -25,6 +24,8 @@ function convertToObject(sourceString) {
     }
 
     const property = prop.split(':');
+
+    property[0] = property[0].replace('\n', '');
 
     property[0] = property[0].trim();
     property[1] = property[1].trim();
