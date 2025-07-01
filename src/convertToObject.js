@@ -25,7 +25,7 @@ function convertToObject(sourceString) {
 
     const property = prop.split(':');
 
-    property[0] = property[0].replace('\n', '');
+    property[0] = property[0].replace(/\n/g, '');
 
     property[0] = property[0].trim();
     property[1] = property[1].trim();
